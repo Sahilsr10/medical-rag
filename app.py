@@ -159,16 +159,8 @@ with st.sidebar:
     st.markdown("## 🏥 Medical RAG")
     st.markdown("---")
 
-    # API Key
-    st.markdown("### 🔑 Groq API Key")
-    env_key = os.getenv("GROQ_API_KEY", "")
-    api_key = st.text_input(
-        "Enter your Groq API key",
-        value=env_key,
-        type="password",
-        placeholder="gsk_...",
-        help="Get a free key at console.groq.com",
-    )
+    # API Key — loaded from Streamlit secrets or environment variable (never exposed to users)
+    api_key = st.secrets.get("GROQ_API_KEY", "") or os.getenv("GROQ_API_KEY", "")
 
     st.markdown("---")
 
@@ -263,7 +255,7 @@ st.markdown("---")
 
 # ── Guard: need API key + at least one paper ──
 if not api_key:
-    st.info("👈 Enter your Groq API key in the sidebar to get started.")
+    st.error("⚠️ GROQ_API_KEY is not configured. Please add it in Streamlit Cloud → Settings → Secrets.")
     st.stop()
 
 if count == 0:
