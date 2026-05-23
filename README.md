@@ -64,23 +64,6 @@ Open http://localhost:8501 in your browser.
 
 ---
 
-## Deploy to Streamlit Cloud (Free)
-
-1. Push this folder to a **public GitHub repo**.
-
-2. Go to [share.streamlit.io](https://share.streamlit.io) → **New app**
-
-3. Fill in:
-   - **Repository**: `your-username/medical-rag`
-   - **Branch**: `main`
-   - **Main file path**: `app.py`
-
-4. Click **Advanced settings → Secrets** and paste:
-   ```toml
-   GROQ_API_KEY = "gsk_your_key_here"
-   ```
-
-5. Click **Deploy** — done. Share the URL with anyone.
 
 > **Note on persistence**: Streamlit Cloud has an ephemeral filesystem — the ChromaDB store resets on each app restart. Users will need to re-upload their PDFs after a restart. For persistent storage, see the Railway/Render section below.
 
