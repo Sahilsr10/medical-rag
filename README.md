@@ -65,25 +65,7 @@ Open http://localhost:8501 in your browser.
 ---
 
 
-> **Note on persistence**: Streamlit Cloud has an ephemeral filesystem — the ChromaDB store resets on each app restart. Users will need to re-upload their PDFs after a restart. For persistent storage, see the Railway/Render section below.
 
----
-
-## Deploy to Railway (Persistent storage)
-
-Railway gives you a persistent volume so the vector store survives restarts.
-
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-railway login
-
-# From your project folder
-railway init
-railway up
-```
-
-In the Railway dashboard:
 - Set environment variable: `GROQ_API_KEY=gsk_...`
 - Set start command: `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`
 
