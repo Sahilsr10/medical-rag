@@ -4,6 +4,10 @@ A production-ready Retrieval-Augmented Generation (RAG) system for biomedical re
 
 ---
 
+
+Deployed at : https://medical-rag-gpcr4bym7xr9btaorz69rz.streamlit.app/
+
+
 ## Features
 
 - **Drag-and-drop PDF upload** — any number of research papers
