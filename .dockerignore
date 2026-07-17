@@ -1,0 +1,8 @@
+.venv
+.git
+.gitignore
+.env
+data/vector_store
+__pycache__
+*.pyc
+README.md
